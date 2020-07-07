@@ -20,10 +20,15 @@ public abstract class Entity : MonoBehaviour, ISelectable
     public Selector Sel { get; set; }
     public Collider2D Bc { get; set; }
 
+    public GameObject Gobj { get; set; }
+
+
     protected void Construct()
     {
         wrGo = GameObject.Find(Instructions.wrapperGoName);
         wr = wrGo.GetComponent<Wrapper>();
+
+        Gobj = gameObject;
     }
 
     // Start is called before the first frame update
@@ -63,5 +68,9 @@ public abstract class Entity : MonoBehaviour, ISelectable
 
         // Execute the Selector's Select() method
         Sel.Select();
+    }
+    public void MoveToPos(float x_, float y_)
+    {
+        gameObject.transform.SetPositionAndRotation(new Vector3(x_, y_, gameObject.transform.position.z), Quaternion.identity);
     }
 }

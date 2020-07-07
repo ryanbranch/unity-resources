@@ -74,6 +74,9 @@ public class Wrapper : MonoBehaviour
 
         particlePrefab.Construct(64, 64);
         particlePrefab.AddSelector();
+
+        particles[0].MoveToPos(-2f, 2f);
+        particlePrefab.MoveToPos(3f, 4f);
     }
 
 public void DeselectAll()

@@ -21,8 +21,6 @@ public class Particle : Entity
     void Start()
     {
         base.Start();
-
-        gameObject.transform.SetPositionAndRotation(new Vector3(-3f, 3f, 0f), Quaternion.identity);
     }
 
     // Update is called once per frame

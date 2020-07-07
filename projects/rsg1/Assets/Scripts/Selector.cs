@@ -95,5 +95,6 @@ public class Selector : MonoBehaviour
     public void SetParent(ISelectable parent_)
     {
         parent = parent_;
+        gameObject.transform.SetParent(parent.Gobj.transform);
     }
 }

@@ -10,6 +10,8 @@ public interface ISelectable
     SelectorShape SelShape { get; set; }
     Selector Sel { get; set; }
 
+    GameObject Gobj { get; set; }
+
     void AddSelector();
     void EventLeftMouseDown();
 
