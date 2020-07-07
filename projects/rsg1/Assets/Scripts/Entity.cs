@@ -20,15 +20,13 @@ public abstract class Entity : MonoBehaviour, ISelectable
     public Selector Sel { get; set; }
     public Collider2D Bc { get; set; }
 
-    public GameObject Gobj { get; set; }
+    public GameObject Gobj { get { return gameObject; } set {}  }
 
 
     protected void Construct()
     {
         wrGo = GameObject.Find(Instructions.wrapperGoName);
         wr = wrGo.GetComponent<Wrapper>();
-
-        Gobj = gameObject;
     }
 
     // Start is called before the first frame update
