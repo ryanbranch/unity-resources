@@ -31,7 +31,7 @@ public class MouseInput : MonoBehaviour
 
 
                 // SANDBOX CLICKS
-                if (hit.collider.gameObject.name == (Instructions.sandboxGoName))
+                if (hit.collider.gameObject.name == (Instructions.sandboxPrefabGoName))
                 {
                     Debug.Log("Mouse Clicked on Sandbox GameObject (ORIGINAL)");
                     

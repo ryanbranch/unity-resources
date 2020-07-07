@@ -31,7 +31,9 @@ public class Instructions : ScriptableSingleton<Instructions>
 
     public static string selectorPrefabGoName = "SelectorPrefabGO";
 
-    public static string sandboxGoName = "SandboxGO";
+    public static string sandboxPrefabGoName = "SandboxPrefabGO";
+
+    public static string entityPrefabGoName = "EntityPrefabGO";
 
     // SPRITE FILE NAMES
     // Circles
@@ -63,6 +65,23 @@ public class Instructions : ScriptableSingleton<Instructions>
     // Square Borders
     public static string resBorder8Square128 = "Sprites/Borders/border-8-rectangle-128-128";
 
+    // COLOR DEFINITIONS
+    public static float defaultColorAlpha = 1f;
+    public static Color colorRed = new Color(1f, 0f, 0f, defaultColorAlpha);
+    public static Color colorGreen = new Color(0f, 1f, 0f, defaultColorAlpha);
+    public static Color colorBlue = new Color(0f, 0f, 1f, defaultColorAlpha);
+    public static Color colorCyan = new Color(0f, 1f, 1f, defaultColorAlpha);
+    public static Color colorMagenta = new Color(1f, 0f, 1f, defaultColorAlpha);
+    public static Color colorYellow = new Color(1f, 1f, 0f, defaultColorAlpha);
+    public static Color colorBlack = new Color(0f, 0f, 0f, defaultColorAlpha);
+    public static Color colorWhite = new Color(1f, 1f, 1f, defaultColorAlpha);
+    public static Color[] colors = {colorBlue, colorCyan};
+
+    // SORTING ORDERS
+    // NOTE: "True default" Sorting Order value is 0
+    public static int defaultSelectorSortingOrder = 10; // Should be higher than the SO of any selectable entity
+    public static int defaultEntitySortingOrder = 1;
+
     // Maximum Instance Counts
     //  - Provide size Definitions for arrays designated to hold INSTANTIATED Prefabs ("goi-arrays") and their designated class script instances
     public static int maxNumNPCs = 10;
@@ -84,8 +103,7 @@ public class Instructions : ScriptableSingleton<Instructions>
     public static float defaultCameraZoomOutRatio = 1.01f;
     public static float defaultCameraZoomInRatio = 0.99f;
 
-    // F O R     S E L E C T O R
-    public static int defaultSelectorSortingOrder = 1;
+    
 
 
     public Instructions()

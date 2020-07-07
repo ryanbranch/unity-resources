@@ -10,7 +10,6 @@ public class SandboxClass : MonoBehaviour
     public SpriteRenderer sr;
     public BoxCollider2D bc;
 
-    [SerializeField]
     public Selector sel;
 
     public void Construct()
