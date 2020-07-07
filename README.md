@@ -26,6 +26,5 @@ I'm also thankful to the following specific resources which were referenced duri
 
 * [**Unity Learn**](https://learn.unity.com/), especially the following tutorial series:
   * [*"Unity C# Survival Guide"*](https://learn.unity.com/course/unity-c-survival-guide) by Jonathan Weinberger
-  * about the mathematical relationship between RGB and HSV color representations, from The University of Illinois College of Engineering's GE 423 course (circa 2005)
 * The [**Unify Wiki**](http://wiki.unity3d.com/index.php/Main_Page), especially the following articles:
   * [*"Choosing the right collection type"*](https://wiki.unity3d.com/index.php/Choosing_the_right_collection_type)
