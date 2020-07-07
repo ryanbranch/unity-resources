@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Entity : MonoBehaviour
+[System.Serializable]
+public abstract class Entity : MonoBehaviour
 {
     public GameObject wrGo;
     public Wrapper wr;
@@ -18,7 +19,7 @@ public class Entity : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         sr = gameObject.AddComponent<SpriteRenderer>();
         sr.sprite = Resources.Load<Sprite>(Instructions.resCircle48);
@@ -27,7 +28,7 @@ public class Entity : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         
     }

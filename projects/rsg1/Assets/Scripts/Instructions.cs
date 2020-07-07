@@ -34,6 +34,7 @@ public class Instructions : ScriptableSingleton<Instructions>
     public static string sandboxPrefabGoName = "SandboxPrefabGO";
 
     public static string entityPrefabGoName = "EntityPrefabGO";
+    public static string particlePrefabGoName = "ParticlePrefabGO";
 
     // SPRITE FILE NAMES
     // Circles

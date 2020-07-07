@@ -33,9 +33,10 @@ public class Wrapper : MonoBehaviour
     public SandboxClass sandboxPrefab;
     public List<SandboxClass> sandboxes;
 
-    public GameObject entityPrefabGo;
-    public Entity entityPrefab;
     public List<Entity> entities;
+    public GameObject particlePrefabGo;
+    public Particle particlePrefab;
+    public List<Particle> particles;
 
     [SerializeField]
     public Color[] testArr1 = { Instructions.colorBlue, Instructions.colorCyan };
@@ -67,7 +68,7 @@ public class Wrapper : MonoBehaviour
         sandboxPrefab.Construct();
         sandboxPrefab.AddSelector();
 
-        entities.Add(Instantiate(entityPrefab).GetComponent<Entity>());
+        particles.Add(Instantiate(particlePrefab).GetComponent<Particle>());
     }
 
 public void DeselectAll()
@@ -118,9 +119,11 @@ public void DeselectAll()
         sandboxes = new List<SandboxClass>();
 
         // Entity
-        entityPrefabGo = new GameObject(Instructions.entityPrefabGoName);
-        entityPrefab = entityPrefabGo.AddComponent<Entity>();
         entities = new List<Entity>();
+        // Particle
+        particlePrefabGo = new GameObject(Instructions.particlePrefabGoName);
+        particlePrefab = particlePrefabGo.AddComponent<Particle>();
+        particles = new List<Particle>();
     }
 
 }
