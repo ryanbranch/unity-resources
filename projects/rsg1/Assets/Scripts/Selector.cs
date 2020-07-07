@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Selector : MonoBehaviour
@@ -12,6 +13,8 @@ public class Selector : MonoBehaviour
     public bool flagSelecting;
     public bool flagAnimating;
     public bool flagChangedView;
+
+    public ISelectable parent;
 
 
     // Start is called before the first frame update
@@ -41,6 +44,8 @@ public class Selector : MonoBehaviour
         {
             flagChangedView = true;
         }
+
+        //Debug.Log(parent.DimX);
     }
 
     // Only to be called when a visual change is needed
@@ -85,5 +90,10 @@ public class Selector : MonoBehaviour
             flagSelecting = true;
         }
         // Else, the Selector is already selecting.
+    }
+
+    public void SetParent(ISelectable parent_)
+    {
+        parent = parent_;
     }
 }

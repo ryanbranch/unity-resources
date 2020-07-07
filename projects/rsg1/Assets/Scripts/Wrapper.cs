@@ -69,6 +69,11 @@ public class Wrapper : MonoBehaviour
         sandboxPrefab.AddSelector();
 
         particles.Add(Instantiate(particlePrefab).GetComponent<Particle>());
+        particles[0].Construct(48, 48);
+        particles[0].AddSelector();
+
+        particlePrefab.Construct(64, 64);
+        particlePrefab.AddSelector();
     }
 
 public void DeselectAll()

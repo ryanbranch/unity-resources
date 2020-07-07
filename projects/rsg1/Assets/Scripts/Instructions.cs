@@ -15,12 +15,16 @@ using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 
+// G L O B A L     E N U M S
+public enum SelectorShape { Circular, Rectangular}
+
 // Instructions is a ScriptableSingleton so that it can be used as a common reference across Monobehaviours
 // Member variables and functions must be STATIC for this reason
 public class Instructions : ScriptableSingleton<Instructions>
 {
     // F O R     W R A P P E R
     // GAMEOBJECT NAMES
+    public static string instanceSuffix = "(Clone)";
     public static string mainCameraGoName = "MainCameraGO";
     public static string wrapperGoName = "WrapperGO";
     public static string keyboardInputGoName = "KeyboardInputGO";
@@ -104,7 +108,10 @@ public class Instructions : ScriptableSingleton<Instructions>
     public static float defaultCameraZoomOutRatio = 1.01f;
     public static float defaultCameraZoomInRatio = 0.99f;
 
-    
+    // F O R     P A R T I C L E
+    public static int defaultParticleDimX = 48;
+    public static int defaultParticleDimY = 48;
+
 
 
     public Instructions()

@@ -32,11 +32,6 @@ public class SandboxClass : MonoBehaviour
         
     }
 
-    public void SetSelector(Selector sel_)
-    {
-        sel = sel_;
-    }
-
     public void AddSelector()
     {
         // REFERENCE: Instantiate a Prefab and append (Add) its designated class instance to a List
