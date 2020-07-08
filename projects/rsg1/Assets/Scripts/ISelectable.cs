@@ -4,13 +4,12 @@ using UnityEngine;
 
 public interface ISelectable
 {
-    Collider2D Bc { get; set; }
     int DimX { get; set; }
     int DimY { get; set; }
     SelectorShape SelShape { get; set; }
     Selector Sel { get; set; }
-
     GameObject Gobj { get; set; }
+    Collider2D Bc { get; set; }
 
     void AddSelector();
     void EventLeftMouseDown();

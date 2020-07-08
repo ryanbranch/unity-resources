@@ -57,7 +57,7 @@ public class MouseInput : MonoBehaviour
 
                 else
                 {
-                    Debug.Log("Mouse Clicked on: " + hit.collider.gameObject.name);
+                    Debug.Log("Mouse Clicked on OTHER not caught by IF statement: " + hit.collider.gameObject.name);
                 }
 
             }

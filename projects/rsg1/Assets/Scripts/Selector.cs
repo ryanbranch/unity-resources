@@ -10,12 +10,23 @@ public class Selector : MonoBehaviour
 
     public SpriteRenderer sr;
 
+    public bool flagHasParent;
+    // TODO: Consider trying to go about this in a different way
+    //   https://answers.unity.com/questions/539390/check-if-a-trigger-object-implements-an-interface.html
+    //   https://answers.unity.com/questions/523409/strategy-pattern-with-monobehaviours.html?_ga=2.197816044.2121260276.1594178685-520519817.1594178685
+    public ISelectable parent;
+
     public bool flagSelecting;
     public bool flagAnimating;
     public bool flagChangedView;
 
-    public ISelectable parent;
-
+    public void Construct()
+    {
+        sr = gameObject.AddComponent<SpriteRenderer>();
+        sr.sortingOrder = Instructions.defaultSelectorSortingOrder;
+        // NOTE: Don't need the below line here, it's handled in DetermineSprite()
+        sr.sprite = Resources.Load<Sprite>(Instructions.defaultResBorderSquare);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +34,10 @@ public class Selector : MonoBehaviour
         wrGo = GameObject.Find(Instructions.wrapperGoName);
         wr = wrGo.GetComponent<Wrapper>();
 
-        sr = gameObject.AddComponent<SpriteRenderer>();
-        sr.sprite = Resources.Load<Sprite>(Instructions.resBorder8Square128);
-        sr.sortingOrder = Instructions.defaultSelectorSortingOrder;
 
+        flagHasParent = false;
+
+        flagSelecting = false;
         flagAnimating = false;
         flagChangedView = false;
     }
@@ -96,5 +107,38 @@ public class Selector : MonoBehaviour
     {
         parent = parent_;
         gameObject.transform.SetParent(parent.Gobj.transform);
+        flagHasParent = true;
+    }
+
+    // INVARIANTS:
+    //  - Selector must have a parent
+    //    - Selector.SetParent() must have already been executed
+    public bool DetermineSprite()
+    {
+        // Return early (false) if no parent has been established for the Selector
+        if (!flagHasParent)
+        {
+            Debug.LogError("Selector does not have a defined parent, or its flagHasParent value is wrongly false");
+            return false;
+        }
+        // Otherwise, can proceed with determining Sprite selection
+        // Circular Selector Shape
+        if (parent.SelShape == SelectorShape.Circular)
+        {
+            sr.sprite = Resources.Load<Sprite>(Instructions.defaultResBorderCircle);
+        }
+        // Rectangular Selector Shape
+        else if (parent.SelShape == SelectorShape.Rectangular)
+        {
+            sr.sprite = Resources.Load<Sprite>(Instructions.defaultResBorderSquare);
+        }
+        // Other/Undefined
+        else
+        {
+            Debug.LogError("Selector's parent.SelShape value is neither Circular nor Rectangular");
+            return false;
+        }
+
+        return true;
     }
 }

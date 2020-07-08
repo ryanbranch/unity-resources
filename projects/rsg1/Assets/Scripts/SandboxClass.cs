@@ -37,6 +37,8 @@ public class SandboxClass : MonoBehaviour
         // REFERENCE: Instantiate a Prefab and append (Add) its designated class instance to a List
         wr.selectors.Add(Instantiate(wr.selectorPrefab).GetComponent<Selector>());
         sel = wr.selectors[wr.selectors.Count - 1];
+        sel.Construct();
+
     }
 
     public void EventLeftMouseDown()

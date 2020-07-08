@@ -2,7 +2,7 @@
 // ================================
 //  - S
 // ================================
-//  - Properly handle parent/child relationships between (transforms of) Selectors and their associated GameObjects
+//  - A
 
 using System.Collections;
 using System.Collections.Generic;
@@ -38,8 +38,11 @@ public class Wrapper : MonoBehaviour
     public Particle particlePrefab;
     public List<Particle> particles;
 
+    // REFERENCE: How to instantiate an array by naming all contents
     [SerializeField]
     public Color[] testArr1 = { Instructions.colorBlue, Instructions.colorCyan };
+
+    public ISelectable primarySelection;
 
 
     // Start is called before the first frame update
@@ -69,17 +72,17 @@ public class Wrapper : MonoBehaviour
         sandboxPrefab.AddSelector();
 
         particles.Add(Instantiate(particlePrefab).GetComponent<Particle>());
-        particles[0].Construct(48, 48);
+        particles[0].Construct();
         particles[0].AddSelector();
 
-        particlePrefab.Construct(64, 64);
+        particlePrefab.Construct();
         particlePrefab.AddSelector();
 
         particles[0].MoveToPos(-2f, 2f);
         particlePrefab.MoveToPos(3f, 4f);
     }
 
-public void DeselectAll()
+    public void DeselectAll()
     {
         int numSelectors = selectors.Count;
         for (int i = 0; i < numSelectors; i++)

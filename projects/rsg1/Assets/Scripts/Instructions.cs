@@ -40,6 +40,7 @@ public class Instructions : ScriptableSingleton<Instructions>
     public static string entityPrefabGoName = "EntityPrefabGO";
     public static string particlePrefabGoName = "ParticlePrefabGO";
 
+    // S P R I T E     F I L E     H A N D L I N G
     // SPRITE FILE NAMES
     // Circles
     public static string resCircle16 = "Sprites/Shapes/circle-16";
@@ -67,8 +68,18 @@ public class Instructions : ScriptableSingleton<Instructions>
     public static string resSquare512 = "Sprites/Shapes/rectangle-512-512";
     public static string resSquare768 = "Sprites/Shapes/rectangle-768-768";
     public static string resSquare1024 = "Sprites/Shapes/rectangle-1024-1024";
+    // Circular Borders
+    public static string resBorder8Circle128 = "Sprites/Borders/border-8-circle-128";
     // Square Borders
     public static string resBorder8Square128 = "Sprites/Borders/border-8-rectangle-128-128";
+    // DEFAULT DEFINITIONS
+    // General
+    public static string defaultResSquare = resSquare128;
+    public static string defaultResCircle = resCircle128;
+    public static string defaultResBorderSquare = resBorder8Square128;
+    public static string defaultResBorderCircle = resBorder8Circle128;
+    // Particles
+
 
     // COLOR DEFINITIONS
     public static float defaultColorAlpha = 1f;
@@ -111,6 +122,7 @@ public class Instructions : ScriptableSingleton<Instructions>
     // F O R     P A R T I C L E
     public static int defaultParticleDimX = 48;
     public static int defaultParticleDimY = 48;
+    public static SelectorShape defaultParticleSelShape = SelectorShape.Circular;
 
 
 
