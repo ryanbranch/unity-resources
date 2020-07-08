@@ -29,9 +29,8 @@ public abstract class Entity : MonoBehaviour, ISelectable
         // TODO: FIX THIS; Entity should not inherently use CircleCollider2D over BoxCollider2D
         Bc = gameObject.AddComponent<CircleCollider2D>();
 
-        // If the Type of THIS is Entity, then this is the end of calling Construct()
+        // If the Type of THIS is Entity, as opposed to a different base or derived class
         if (this.GetType() == typeof(Entity)) {
-            Debug.Log("True for ENTITY");
 
             sr.sprite = Resources.Load<Sprite>(Instructions.defaultImgEntity);
             sr.sortingOrder = Instructions.defaultSortingOrderEntity;

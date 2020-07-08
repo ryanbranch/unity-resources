@@ -85,7 +85,9 @@ public class Instructions : ScriptableSingleton<Instructions>
     // F I L E P A T H S
     //   (Must be fully defined BEFORE the Sprite Definition Dictionaries)
     // CIRCLES
+    public static string imgCircle8 = "Sprites/Shapes/circle-8";
     public static string imgCircle16 = "Sprites/Shapes/circle-16";
+    public static string imgCircle24 = "Sprites/Shapes/circle-24";
     public static string imgCircle32 = "Sprites/Shapes/circle-32";
     public static string imgCircle48 = "Sprites/Shapes/circle-48";
     public static string imgCircle64 = "Sprites/Shapes/circle-64";
@@ -98,7 +100,9 @@ public class Instructions : ScriptableSingleton<Instructions>
     public static string imgCircle768 = "Sprites/Shapes/circle-768";
     public static string imgCircle1024 = "Sprites/Shapes/circle-1024";
     // SQUARES
+    public static string imgSquare8 = "Sprites/Shapes/rectangle-8-8";
     public static string imgSquare16 = "Sprites/Shapes/rectangle-16-16";
+    public static string imgSquare24 = "Sprites/Shapes/rectangle-24-24";
     public static string imgSquare32 = "Sprites/Shapes/rectangle-32-32";
     public static string imgSquare48 = "Sprites/Shapes/rectangle-48-48";
     public static string imgSquare64 = "Sprites/Shapes/rectangle-64-64";
@@ -110,10 +114,27 @@ public class Instructions : ScriptableSingleton<Instructions>
     public static string imgSquare512 = "Sprites/Shapes/rectangle-512-512";
     public static string imgSquare768 = "Sprites/Shapes/rectangle-768-768";
     public static string imgSquare1024 = "Sprites/Shapes/rectangle-1024-1024";
+    // RECTANGLES
+    //   X Dimension 8
+    public static string imgRectangle8by8 = "Sprites/Shapes/rectangle-8-8";
+    public static string imgRectangle8by16 = "Sprites/Shapes/rectangle-8-16";
+    public static string imgRectangle8by24 = "Sprites/Shapes/rectangle-8-24";
+    public static string imgRectangle8by32 = "Sprites/Shapes/rectangle-8-32";
+    public static string imgRectangle8by48 = "Sprites/Shapes/rectangle-8-48";
+    public static string imgRectangle8by64 = "Sprites/Shapes/rectangle-8-64";
+    public static string imgRectangle8by96 = "Sprites/Shapes/rectangle-8-96";
+    public static string imgRectangle8by128 = "Sprites/Shapes/rectangle-8-128";
+    public static string imgRectangle8by192 = "Sprites/Shapes/rectangle-8-192";
+    public static string imgRectangle8by256 = "Sprites/Shapes/rectangle-8-256";
+    public static string imgRectangle8by384 = "Sprites/Shapes/rectangle-8-384";
+    public static string imgRectangle8by512 = "Sprites/Shapes/rectangle-8-512";
+    public static string imgRectangle8by768 = "Sprites/Shapes/rectangle-8-768";
+    public static string imgRectangle8by1024 = "Sprites/Shapes/rectangle-8-1024";
     // CIRCULAR BORDERS
     //   Thickness 4
     public static string imgBorder4Circle16 = "Sprites/Borders/border-4-circle-16";
     //   Thickness 8
+    public static string imgBorder8Circle24 = "Sprites/Borders/border-8-circle-24";
     public static string imgBorder8Circle32 = "Sprites/Borders/border-8-circle-32";
     public static string imgBorder8Circle48 = "Sprites/Borders/border-8-circle-48";
     public static string imgBorder8Circle64 = "Sprites/Borders/border-8-circle-64";
@@ -146,6 +167,7 @@ public class Instructions : ScriptableSingleton<Instructions>
     //   Thickness 7
     public static string imgBorder7Square128 = "Sprites/Borders/border-7-rectangle-128-128";
     //   Thickness 8
+    public static string imgBorder8Square24 = "Sprites/Borders/border-8-rectangle-24-24";
     public static string imgBorder8Square32 = "Sprites/Borders/border-8-rectangle-32-32";
     public static string imgBorder8Square48 = "Sprites/Borders/border-8-rectangle-48-48";
     public static string imgBorder8Square64 = "Sprites/Borders/border-8-rectangle-64-64";
@@ -162,19 +184,23 @@ public class Instructions : ScriptableSingleton<Instructions>
     //   AND OTHER LOOKUP DATA STRUCTURES
     //   (Must be defined AFTER all filepaths, must be fully defined BEFORE the Sprite Abstraction Values)
     // IMAGE SIZE STANDARDS
-    public static int[] imgCircleSizeStandards = { 16, 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024 };
-    public static int[] imgSquareSizeStandards = { 16, 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024 };
+    public static int[] imgCircleSizeStandards = { 8, 16, 24, 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024 };
+    public static int[] imgSquareSizeStandards = { 8, 16, 24, 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024 };
     public static Dictionary<int, int[]> imgBorderCircleSizeStandards = new Dictionary<int, int[]>
     {
-        { 8, (new int[]{ 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024}) }
+        { 8, (new int[]{ 24, 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024}) }
     };
     public static Dictionary<int, int[]> imgBorderSquareSizeStandards = new Dictionary<int, int[]>
     {
-        { 8, (new int[]{ 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024}) }
+        { 8, (new int[]{ 24, 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024}) }
     };
+    // SPRITE DEFINITION DICTIONARIES
+    // Circles
     public static Dictionary<int, string> imgsCircles = new Dictionary<int, string>
     {
+        { 8, imgCircle8 },
         { 16, imgCircle16 },
+        { 24, imgCircle24 },
         { 32, imgCircle32 },
         { 48, imgCircle48 },
         { 64, imgCircle64 },
@@ -185,11 +211,14 @@ public class Instructions : ScriptableSingleton<Instructions>
         { 384, imgCircle384 },
         { 512, imgCircle512 },
         { 768, imgCircle768 },
-        { 1024, imgCircle1024 },
+        { 1024, imgCircle1024 }
     };
+    // Squares
     public static Dictionary<int, string> imgsSquares = new Dictionary<int, string>
     {
+        { 8, imgSquare8 },
         { 16, imgSquare16 },
+        { 24, imgSquare24 },
         { 32, imgSquare32 },
         { 48, imgSquare48 },
         { 64, imgSquare64 },
@@ -200,10 +229,30 @@ public class Instructions : ScriptableSingleton<Instructions>
         { 384, imgSquare384 },
         { 512, imgSquare512 },
         { 768, imgSquare768 },
-        { 1024, imgSquare1024 },
+        { 1024, imgSquare1024 }
     };
+    // Rectangles (X Dimension 8)
+    public static Dictionary<int, string> imgsRectangles8by = new Dictionary<int, string>
+    {
+        { 8, imgRectangle8by8 },
+        { 16, imgRectangle8by16 },
+        { 24, imgRectangle8by24 },
+        { 32, imgRectangle8by32 },
+        { 48, imgRectangle8by48 },
+        { 64, imgRectangle8by64 },
+        { 96, imgRectangle8by96 },
+        { 128, imgRectangle8by128 },
+        { 192, imgRectangle8by192 },
+        { 256, imgRectangle8by256 },
+        { 384, imgRectangle8by384 },
+        { 512, imgRectangle8by512 },
+        { 768, imgRectangle8by768 },
+        { 1024, imgRectangle8by1024 }
+    };
+    // Circular Borders (Thickness 8)
     public static Dictionary<int, string> imgsBorder8Circles = new Dictionary<int, string>
     {
+        { 24, imgBorder8Circle24 },
         { 32, imgBorder8Circle32 },
         { 48, imgBorder8Circle48 },
         { 64, imgBorder8Circle64 },
@@ -214,10 +263,12 @@ public class Instructions : ScriptableSingleton<Instructions>
         { 384, imgBorder8Circle384 },
         { 512, imgBorder8Circle512 },
         { 768, imgBorder8Circle768 },
-        { 1024, imgBorder8Circle1024 },
+        { 1024, imgBorder8Circle1024 }
     };
+    // Square Borders (Thickness 8)
     public static Dictionary<int, string> imgsBorder8Squares = new Dictionary<int, string>
     {
+        { 24, imgBorder8Square24 },
         { 32, imgBorder8Square32 },
         { 48, imgBorder8Square48 },
         { 64, imgBorder8Square64 },
@@ -228,16 +279,25 @@ public class Instructions : ScriptableSingleton<Instructions>
         { 384, imgBorder8Square384 },
         { 512, imgBorder8Square512 },
         { 768, imgBorder8Square768 },
-        { 1024, imgBorder8Square1024 },
+        { 1024, imgBorder8Square1024 }
     };
+    // SPRITE DEFINITION DICTIONARY LOOKUP DICTIONARIES
+    // Rectangles
+    public static Dictionary<int, Dictionary<int, string>> imgsRectangles = new Dictionary<int, Dictionary<int, string>>
+    {
+        { 8, imgsRectangles8by }
+    };
+    // Circular Borders
     public static Dictionary<int, Dictionary<int, string>> imgsBorderCircles = new Dictionary<int, Dictionary<int, string>>
     {
         { 8, imgsBorder8Circles }
     };
+    // Square Borders
     public static Dictionary<int, Dictionary<int, string>> imgsBorderSquares = new Dictionary<int, Dictionary<int, string>>
     {
         { 8, imgsBorder8Squares }
     };
+
 
     // S P R I T E     A B S T R A C T I O N     V A L U E S
     // GENERAL
