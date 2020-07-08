@@ -1,8 +1,10 @@
 ﻿// TODO:
 // ================================
-//  - S
+//  - S: Placeholder
 // ================================
-//  - A
+//  - A: Placeholder
+//  - B: Stop using "Bc"-based naming convention when not all colliders are Boxes
+//      1. More significantly, figure out a way to use a generic "Collider" with Type checks
 
 using System.Collections;
 using System.Collections.Generic;
@@ -72,10 +74,10 @@ public class Wrapper : MonoBehaviour
         sandboxPrefab.AddSelector();
 
         particles.Add(Instantiate(particlePrefab).GetComponent<Particle>());
-        particles[0].Construct();
+        particles[0].Construct(32);
         particles[0].AddSelector();
 
-        particlePrefab.Construct();
+        particlePrefab.Construct(96);
         particlePrefab.AddSelector();
 
         particles[0].MoveToPos(-2f, 2f);

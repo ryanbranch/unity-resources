@@ -25,10 +25,18 @@ public abstract class Entity : MonoBehaviour, ISelectable
     {
         wrGo = GameObject.Find(Instructions.wrapperGoName);
         wr = wrGo.GetComponent<Wrapper>();
+        sr = gameObject.AddComponent<SpriteRenderer>();
+        // TODO: FIX THIS; Entity should not inherently use CircleCollider2D over BoxCollider2D
+        Bc = gameObject.AddComponent<CircleCollider2D>();
 
         // If the Type of THIS is Entity, then this is the end of calling Construct()
         if (this.GetType() == typeof(Entity)) {
             Debug.Log("True for ENTITY");
+
+            sr.sprite = Resources.Load<Sprite>(Instructions.defaultImgEntity);
+            sr.sortingOrder = Instructions.defaultSortingOrderEntity;
+            sr.color = Instructions.colors["entity"]["default"];
+
             flagDidConstruct = true;
         }
     }
@@ -36,12 +44,7 @@ public abstract class Entity : MonoBehaviour, ISelectable
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        // TODO: FIX THIS; Entity should not inherently use CircleCollider2D over BoxCollider2D
-        Bc = gameObject.AddComponent<CircleCollider2D>();
-        sr = gameObject.AddComponent<SpriteRenderer>();
-        sr.sprite = Resources.Load<Sprite>(Instructions.resCircle48);
-        sr.sortingOrder = Instructions.defaultEntitySortingOrder;
-        sr.color = Instructions.colorRed;
+        
     }
 
     // Update is called once per frame

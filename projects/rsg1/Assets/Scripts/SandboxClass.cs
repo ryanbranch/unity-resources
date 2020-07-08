@@ -22,7 +22,7 @@ public class SandboxClass : MonoBehaviour
     void Start()
     {
         sr = gameObject.AddComponent<SpriteRenderer>();
-        sr.sprite = Resources.Load<Sprite>(Instructions.resSquare128);
+        sr.sprite = Resources.Load<Sprite>(Instructions.defaultImgSquare);
         bc = gameObject.AddComponent<BoxCollider2D>();
     }
 

@@ -23,9 +23,9 @@ public class Selector : MonoBehaviour
     public void Construct()
     {
         sr = gameObject.AddComponent<SpriteRenderer>();
-        sr.sortingOrder = Instructions.defaultSelectorSortingOrder;
+        sr.sortingOrder = Instructions.defaultSortingOrderSelector;
         // NOTE: Don't need the below line here, it's handled in DetermineSprite()
-        sr.sprite = Resources.Load<Sprite>(Instructions.defaultResBorderSquare);
+        sr.sprite = Resources.Load<Sprite>(Instructions.defaultImgSelector);
     }
 
     // Start is called before the first frame update
@@ -125,12 +125,12 @@ public class Selector : MonoBehaviour
         // Circular Selector Shape
         if (parent.SelShape == SelectorShape.Circular)
         {
-            sr.sprite = Resources.Load<Sprite>(Instructions.defaultResBorderCircle);
+            sr.sprite = Resources.Load<Sprite>(Instructions.defaultImgSelectorCircle);
         }
         // Rectangular Selector Shape
         else if (parent.SelShape == SelectorShape.Rectangular)
         {
-            sr.sprite = Resources.Load<Sprite>(Instructions.defaultResBorderSquare);
+            sr.sprite = Resources.Load<Sprite>(Instructions.defaultImgSelectorSquare);
         }
         // Other/Undefined
         else

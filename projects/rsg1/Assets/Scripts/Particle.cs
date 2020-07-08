@@ -7,32 +7,44 @@ using UnityEngine;
 //[System.Serializable]
 public class Particle : Entity
 {
+    public int diameter;
     public override void Construct()
     {
         base.Construct();
-        DimX = Instructions.defaultParticleDimX;
-        DimY = Instructions.defaultParticleDimY;
-        SelShape = Instructions.defaultParticleSelShape;
+        DimX = Instructions.defaultDimXParticle;
+        DimY = Instructions.defaultDimYParticle;
+        SelShape = Instructions.defaultSelShapeParticle;
 
         // If the Type of THIS is Particle, then this is the end of calling Construct()
         if (this.GetType() == typeof(Particle))
         {
             Debug.Log("True for PARTICLE in Construct()");
+
+            sr.sprite = Resources.Load<Sprite>(Instructions.defaultImgParticle);
+            sr.sortingOrder = Instructions.defaultSortingOrderParticle;
+            sr.color = Instructions.colors["particle"]["default"];
+
             flagDidConstruct = true;
         }
     }
-    public void Construct(int x_, int y_)
+
+    public void Construct(int diameter_)
     {
         base.Construct();
-        // INTERFACE ISelectable
-        DimX = x_;
-        DimY = y_;
+        diameter = diameter_;
+        DimX = diameter_;
+        DimY = diameter_;
         SelShape = SelectorShape.Circular;
 
         // If the Type of THIS is Particle, then this is the end of calling Construct()
         if (this.GetType() == typeof(Particle))
         {
             Debug.Log("True for PARTICLE in Construct(x, y)");
+
+            sr.sprite = Resources.Load<Sprite>(Instructions.defaultImgParticle);
+            sr.sortingOrder = Instructions.defaultSortingOrderParticle;
+            sr.color = Instructions.colors["particle"]["default"];
+
             flagDidConstruct = true;
         }
     }
