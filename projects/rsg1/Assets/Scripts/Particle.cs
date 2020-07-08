@@ -8,25 +8,6 @@ using UnityEngine;
 public class Particle : Entity
 {
     public int diameter;
-    public override void Construct()
-    {
-        base.Construct();
-        DimX = Instructions.defaultDimXParticle;
-        DimY = Instructions.defaultDimYParticle;
-        SelShape = Instructions.defaultSelShapeParticle;
-
-        // If the Type of THIS is Particle, then this is the end of calling Construct()
-        if (this.GetType() == typeof(Particle))
-        {
-            Debug.Log("True for PARTICLE in Construct()");
-
-            sr.sprite = Resources.Load<Sprite>(Instructions.defaultImgParticle);
-            sr.sortingOrder = Instructions.defaultSortingOrderParticle;
-            sr.color = Instructions.colors["particle"]["default"];
-
-            flagDidConstruct = true;
-        }
-    }
 
     public void Construct(int diameter_)
     {

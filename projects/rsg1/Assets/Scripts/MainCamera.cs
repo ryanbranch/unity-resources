@@ -16,7 +16,7 @@ public class MainCamera : MonoBehaviour
 
     public void Construct()
     {
-        positionZ = Instructions.defaultCameraPositionZ;
+        positionZ = Instructions.defaultPositionZCamera;
     }
 
     // Start is called before the first frame update
@@ -27,9 +27,9 @@ public class MainCamera : MonoBehaviour
 
         cam = gameObject.GetComponent<Camera>();
 
-        movementSpeed = Instructions.defaultCameraMovementSpeed;
-        zoomOutRatio = Instructions.defaultCameraZoomOutRatio;
-        zoomInRatio = Instructions.defaultCameraZoomInRatio;
+        movementSpeed = Instructions.defaultMovementSpeedCamera;
+        zoomOutRatio = Instructions.defaultZoomOutRatioCamera;
+        zoomInRatio = Instructions.defaultZoomInRatioCamera;
     }
 
     // Update is called once per frame

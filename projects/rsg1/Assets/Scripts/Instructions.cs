@@ -59,18 +59,17 @@ public class Instructions : ScriptableSingleton<Instructions>
     public static int gridDimY = 20;
 
     // F O R     K E Y B O A R D     I N P U T
-    public static KeyCode keyCameraZoomOut = KeyCode.Q;
-    public static KeyCode keyCameraZoomIn = KeyCode.E;
+    public static KeyCode keyZoomOutCamera = KeyCode.Q;
+    public static KeyCode keyZoomInCamera = KeyCode.E;
 
     // F O R     C A M E R A
-    public static float defaultCameraPositionZ = -10f;
-    public static float defaultCameraMovementSpeed = 15f;
-    public static float defaultCameraZoomOutRatio = 1.01f;
-    public static float defaultCameraZoomInRatio = 0.99f;
+    public static float defaultPositionZCamera = -10f;
+    public static float defaultMovementSpeedCamera = 15f;
+    public static float defaultZoomOutRatioCamera = 1.01f;
+    public static float defaultZoomInRatioCamera = 0.99f;
 
     // F O R     P A R T I C L E
-    public static int defaultDimXParticle = 48;
-    public static int defaultDimYParticle = 48;
+    public static int defaultDiameterParticle = 48;
     public static SelectorShape defaultSelShapeParticle = SelectorShape.Circular;
 
 

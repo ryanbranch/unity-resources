@@ -29,11 +29,11 @@ public class KeyboardInput : MonoBehaviour
             wr.mainCamera.Move(horizontalInput, verticalInput);
         }
         // Camera Zoom
-        if (Input.GetKey(Instructions.keyCameraZoomOut))
+        if (Input.GetKey(Instructions.keyZoomOutCamera))
         {
             wr.mainCamera.ZoomOut();
         }
-        else if (Input.GetKey(Instructions.keyCameraZoomIn))
+        else if (Input.GetKey(Instructions.keyZoomInCamera))
         {
             wr.mainCamera.ZoomIn();
         }
